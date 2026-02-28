@@ -13,7 +13,7 @@ services:
       retries: 5
 
   app:
-    image: ghcr.io/${{ github.repository }}/app:sha-${{ github.sha }}
+    image: ghcr.io/danif77/containers-lab-1/app:latest
     environment:
       DB_HOST: postgres
       DB_PASSWORD: secret
@@ -30,7 +30,7 @@ services:
       retries: 5
 
   nginx:
-    image: ghcr.io/${{ github.repository }}/nginx:sha-${{ github.sha }}
+    image: ghcr.io/danif77/containers-lab-1/nginx:latest
     ports:
       - "80:80"
     depends_on:
